@@ -69,8 +69,20 @@ class ViewController: UIViewController {
     // MARK: - Prime Engine Helper
     private func isPrime(_ number: Int) -> Bool {
         
+        var noReminderCount = 0
         for i in (1...number).reversed() {
             print("👻 i: \(i)")
+            let remainder = number % i
+            if remainder == 0 {
+                noReminderCount = noReminderCount + 1
+            }
+        }
+        // check no reminder count
+        if noReminderCount == 2 {
+            // this is a prime number
+            alert(message: "This is a prime number 👍")
+        }else{
+            alert(message: "NOT prime 👎")
         }
         
         return false
