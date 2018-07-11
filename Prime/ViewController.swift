@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Properties
+    var gradientLayer: CAGradientLayer!
+    
+    
     // MARK: - Outlets
     @IBOutlet weak var number: UITextField!
     
@@ -17,9 +21,24 @@ class ViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        makeGradient()
     
     }
 
+    // MARK: - UI Config
+    private func makeGradient() {
+        let fromColor = UIColor(red: 38/255, green: 166/255, blue: 154/255, alpha: 1)
+        let toColor = UIColor(red: 234/255, green: 83/255, blue: 81/255, alpha: 1)
+        
+        
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [fromColor.cgColor, toColor.cgColor]
+        self.view.layer.addSublayer(gradientLayer)
+    }
+    
+    
     // MARK: - UI Actions
     @IBAction func proceed(_ sender: Any) {
         if (number.text?.isEmpty)! {
@@ -29,6 +48,23 @@ class ViewController: UIViewController {
         let result = isPrime(Int(number.text!)!)
         
     }
+    
+    // MARK: - Alert Helper
+    private func alert(message: String){
+        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+            //            print("OK Action")
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true) {
+            // completion
+        }
+        
+        
+    }
+    
+    
     
     // MARK: - Prime Engine Helper
     private func isPrime(_ number: Int) -> Bool {
