@@ -75,11 +75,13 @@ class ViewController: UIViewController {
         
         var noReminderCount = 0
         for i in (1...number).reversed() {
-            print("👻 i: \(i)")
+            
             let remainder = number % i
+            print("👻 i: \(i)  reminderCount: \(noReminderCount)")
+            
             if remainder == 0 {
                 noReminderCount = noReminderCount + 1
-            }else if remainder > 2 {
+            }else if noReminderCount > 2 {
                 return false
             }
         }
