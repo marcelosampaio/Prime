@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,24 +19,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number:   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jad-yj-ecc">
-                                <rect key="frame" x="84" y="318" width="80" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number:   " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jad-yj-ecc">
+                                <rect key="frame" x="16" y="105" width="71" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="cLF-nM-wkh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dik-JO-vtt">
-                                <rect key="frame" x="172" y="318" width="72" height="30"/>
+                                <rect key="frame" x="88" y="105" width="271" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKR-V6-Y9f">
-                                <rect key="frame" x="260" y="318" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="8bg-fL-IEu"/>
-                                </constraints>
-                                <state key="normal" title="&gt;"/>
+                                <rect key="frame" x="16" y="143" width="62" height="30"/>
+                                <state key="normal" title="is prime?"/>
                                 <connections>
                                     <action selector="proceed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eic-6P-2CV"/>
                                 </connections>
@@ -43,14 +44,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sKR-V6-Y9f" firstAttribute="leading" secondItem="dik-JO-vtt" secondAttribute="trailing" constant="16" id="9Rt-ME-ji5"/>
-                            <constraint firstItem="jad-yj-ecc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mwy-45-ril"/>
-                            <constraint firstItem="jad-yj-ecc" firstAttribute="top" secondItem="dik-JO-vtt" secondAttribute="top" id="Pc6-Ms-24T"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sKR-V6-Y9f" secondAttribute="trailing" constant="85" id="Xvg-dW-fDz"/>
-                            <constraint firstItem="dik-JO-vtt" firstAttribute="leading" secondItem="jad-yj-ecc" secondAttribute="trailing" constant="8" symbolic="YES" id="f5t-AN-ouC"/>
-                            <constraint firstItem="jad-yj-ecc" firstAttribute="bottom" secondItem="dik-JO-vtt" secondAttribute="bottom" id="hJ9-Sm-58C"/>
-                            <constraint firstItem="jad-yj-ecc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="84" id="juO-ia-a1v"/>
-                            <constraint firstItem="dik-JO-vtt" firstAttribute="top" secondItem="sKR-V6-Y9f" secondAttribute="top" id="pYG-8h-mYt"/>
+                            <constraint firstItem="sKR-V6-Y9f" firstAttribute="top" secondItem="jad-yj-ecc" secondAttribute="bottom" constant="8" symbolic="YES" id="7T6-oq-8qM"/>
+                            <constraint firstItem="jad-yj-ecc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="Gkz-Gu-Kxj"/>
+                            <constraint firstItem="dik-JO-vtt" firstAttribute="leading" secondItem="jad-yj-ecc" secondAttribute="trailing" constant="1" id="I7g-4y-S02"/>
+                            <constraint firstItem="jad-yj-ecc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YNp-ki-OYd"/>
+                            <constraint firstItem="jad-yj-ecc" firstAttribute="top" secondItem="dik-JO-vtt" secondAttribute="top" id="ZUd-Oa-9Z5"/>
+                            <constraint firstItem="jad-yj-ecc" firstAttribute="bottom" secondItem="dik-JO-vtt" secondAttribute="bottom" id="haS-vv-JS7"/>
+                            <constraint firstItem="dik-JO-vtt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uK5-BM-rRa"/>
+                            <constraint firstItem="jad-yj-ecc" firstAttribute="leading" secondItem="sKR-V6-Y9f" secondAttribute="leading" id="uUR-z7-qJ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

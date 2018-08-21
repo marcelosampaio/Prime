@@ -45,7 +45,11 @@ class ViewController: UIViewController {
             return
         }
         print("proceed action")
-        let result = isPrime(Int(number.text!)!)
+        if isPrime(Int(number.text!)!) {
+            alert(message: "👍")
+        }else{
+            alert(message: "👎")
+        }
         
     }
     
@@ -75,16 +79,15 @@ class ViewController: UIViewController {
             let remainder = number % i
             if remainder == 0 {
                 noReminderCount = noReminderCount + 1
+            }else if remainder > 2 {
+                return false
             }
         }
         // check no reminder count
         if noReminderCount == 2 {
             // this is a prime number
-            alert(message: "This is a prime number 👍")
-        }else{
-            alert(message: "NOT prime 👎")
+            return true
         }
-        
         return false
     }
     
